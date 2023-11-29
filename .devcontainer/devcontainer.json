@@ -1,0 +1,38 @@
+{
+    "dockerFile": "Dockerfile",
+    "build": {
+        "args": {
+            "WORKSPACE": "${containerWorkspaceFolder}",
+            "BUILDKIT_INLINE_CACHE": "0"
+        }
+    },
+
+    "runArgs": [
+        "--gpus=all",
+        "--network=host",
+        "-v", "/tmp/.X11-unix:/tmp/.X11-unix",
+        "--ipc=host"
+        // "--volume=/media/ub18-3/phenet2/kitti_full/:/workspaces/phenet_v0.9/dataset/kitti"
+
+    ],
+    "containerEnv": {
+        "DISPLAY": "${localEnv:DISPLAY}",
+        "LIBGL_ALWAYS_SOFTWARE": "1" // Needed for software rendering of opengl
+    },
+    // Set default container specific settings.json values on container create.
+    "settings": {
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "bash"
+            }
+        },
+        "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-vscode.cpptools",
+        "austin.code-gnu-global",
+        "xshrim.txt-syntax"
+    ]
+} 

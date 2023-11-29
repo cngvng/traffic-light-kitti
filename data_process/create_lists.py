@@ -1,0 +1,2 @@
+# ls /workspaces/PheNet-Traffic_light/kitti/training/label_traffic_sign_rel/ | sed 's/\(.*\)\..*/\1/' > /workspaces/PheNet-Traffic_light/kitti/ImageSets/rel/train.txt
+# ls /workspaces/PheNet-Traffic_light/kitti/testing/image_2 | sed 's/\(.*\)\..*/\1/' > test.txt
